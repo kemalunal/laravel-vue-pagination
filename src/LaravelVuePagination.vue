@@ -66,9 +66,9 @@ export default {
             default: 0
         },
         firstAndLast : {
-			type : Boolean,
-			default : false,
-		}
+		    type : Boolean,
+            default : false
+            }
     },
 
     methods: {

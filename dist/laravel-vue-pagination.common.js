@@ -144,21 +144,6 @@ module.exports = __webpack_require__("9e1e") ? Object.defineProperties : functio
 
 /***/ }),
 
-/***/ "1eb2":
-/***/ (function(module, exports, __webpack_require__) {
-
-// This file is imported into lib/wc client bundles.
-
-if (typeof window !== 'undefined') {
-  var i
-  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js$/))) {
-    __webpack_require__.p = i[1] // eslint-disable-line
-  }
-}
-
-
-/***/ }),
-
 /***/ "230e":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -914,10 +899,20 @@ module.exports = document && document.documentElement;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
-var setPublicPath = __webpack_require__("1eb2");
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
+// This file is imported into lib/wc client bundles.
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0595ba96-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LaravelVuePagination.vue?vue&type=template&id=3356edbe&
+if (typeof window !== 'undefined') {
+  var i
+  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js$/))) {
+    __webpack_require__.p = i[1] // eslint-disable-line
+  }
+}
+
+// Indicate to webpack that this file can be concatenated
+/* harmony default export */ var setPublicPath = (null);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"2867f158-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LaravelVuePagination.vue?vue&type=template&id=1df98cff&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('renderless-laravel-vue-pagination',{attrs:{"data":_vm.data,"limit":_vm.limit},on:{"pagination-change-page":_vm.onPaginationChangePage},scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var data = ref.data;
 var limit = ref.limit;
@@ -925,16 +920,16 @@ var pageRange = ref.pageRange;
 var prevButtonEvents = ref.prevButtonEvents;
 var nextButtonEvents = ref.nextButtonEvents;
 var pageButtonEvents = ref.pageButtonEvents;
-return (data.total > data.per_page)?_c('ul',{staticClass:"pagination"},[(data.prev_page_url)?_c('li',{staticClass:"page-item pagination-prev-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Previous"}},prevButtonEvents),[_vm._t("prev-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("«")]),_c('span',{staticClass:"sr-only"},[_vm._v("Previous")])])],2)]):_vm._e(),_vm._l((pageRange),function(page,key){return _c('li',{key:key,staticClass:"page-item pagination-page-nav",class:{ 'active': page == data.current_page }},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#"}},pageButtonEvents(page)),[_vm._v(_vm._s(page))])])}),(data.next_page_url)?_c('li',{staticClass:"page-item pagination-next-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Next"}},nextButtonEvents),[_vm._t("next-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("»")]),_c('span',{staticClass:"sr-only"},[_vm._v("Next")])])],2)]):_vm._e()],2):_vm._e()}}])})}
+return (data.total > data.per_page)?_c('ul',{staticClass:"pagination"},[(data.prev_page_url && _vm.firstAndLast)?_c('li',{staticClass:"page-item pagination-prev-nav"},[_c('a',{staticClass:"page-link",attrs:{"href":"#","aria-label":"Previous"},on:{"click":function($event){$event.preventDefault();_vm.selectPage(1)}}},[_vm._t("first-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("«")]),_c('span',{staticClass:"sr-only"},[_vm._v("First")])])],2)]):_vm._e(),(data.prev_page_url)?_c('li',{staticClass:"page-item pagination-prev-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Previous"}},prevButtonEvents),[_vm._t("prev-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("«")]),_c('span',{staticClass:"sr-only"},[_vm._v("Previous")])])],2)]):_vm._e(),_vm._l((pageRange),function(page,key){return _c('li',{key:key,staticClass:"page-item pagination-page-nav",class:{ 'active': page == data.current_page }},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#"}},pageButtonEvents(page)),[_vm._v(_vm._s(page))])])}),(data.next_page_url)?_c('li',{staticClass:"page-item pagination-next-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Next"}},nextButtonEvents),[_vm._t("next-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("»")]),_c('span',{staticClass:"sr-only"},[_vm._v("Next")])])],2)]):_vm._e(),(data.next_page_url && _vm.firstAndLast)?_c('li',{staticClass:"page-item pagination-next-nav"},[_c('a',{staticClass:"page-link",attrs:{"href":"#","aria-label":"Next"},on:{"click":function($event){$event.preventDefault();_vm.selectPage(data.last_page)}}},[_vm._t("last-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("»")]),_c('span',{staticClass:"sr-only"},[_vm._v("Last")])])],2)]):_vm._e()],2):_vm._e()}}])})}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/LaravelVuePagination.vue?vue&type=template&id=3356edbe&
+// CONCATENATED MODULE: ./src/LaravelVuePagination.vue?vue&type=template&id=1df98cff&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/RenderlessLaravelVuePagination.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/RenderlessLaravelVuePagination.vue?vue&type=script&lang=js&
 
 /* harmony default export */ var RenderlessLaravelVuePaginationvue_type_script_lang_js_ = ({
   props: {
@@ -1165,8 +1160,24 @@ var component = normalizeComponent(
 
 component.options.__file = "RenderlessLaravelVuePagination.vue"
 /* harmony default export */ var RenderlessLaravelVuePagination = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/LaravelVuePagination.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LaravelVuePagination.vue?vue&type=script&lang=js&
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1215,6 +1226,10 @@ component.options.__file = "RenderlessLaravelVuePagination.vue"
     limit: {
       type: Number,
       default: 0
+    },
+    firstAndLast: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
