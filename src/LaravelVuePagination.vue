@@ -1,6 +1,14 @@
 <template>
     <renderless-laravel-vue-pagination :data="data" :limit="limit" v-on:pagination-change-page="onPaginationChangePage">
         <ul class="pagination" v-if="data.total > data.per_page" slot-scope="{ data, limit, pageRange, prevButtonEvents, nextButtonEvents, pageButtonEvents }">
+            <li class="page-item pagination-prev-nav" v-if="data.prev_page_url && firstAndLast">
+                <a class="page-link" href="#" aria-label="Previous" @click.prevent="selectPage(1)">
+                    <slot name="first-nav">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">First</span>
+                    </slot>
+                </a>
+		    </li>
             <li class="page-item pagination-prev-nav" v-if="data.prev_page_url">
                 <a class="page-link" href="#" aria-label="Previous" v-on="prevButtonEvents">
                     <slot name="prev-nav">
@@ -20,6 +28,14 @@
                     </slot>
                 </a>
             </li>
+            <li class="page-item pagination-next-nav" v-if="data.next_page_url && firstAndLast">
+                <a class="page-link" href="#" aria-label="Next" @click.prevent="selectPage(data.last_page)">
+                    <slot name="last-nav">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Last</span>
+                    </slot>
+                </a>
+		    </li>
         </ul>
     </renderless-laravel-vue-pagination>
 </template>
@@ -48,7 +64,11 @@ export default {
         limit: {
             type: Number,
             default: 0
-        }
+        },
+        firstAndLast : {
+			type : Boolean,
+			default : false,
+		}
     },
 
     methods: {
