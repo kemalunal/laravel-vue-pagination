@@ -1,6 +1,6 @@
 <template>
     <div class="p-5">
-        <pagination :data="laravelData" :limit="2" @pagination-change-page="getResults" />
+        <pagination :first-and-last="true" :data="laravelData" :limit="2" @pagination-change-page="getResults" />
     </div>
 </template>
 
