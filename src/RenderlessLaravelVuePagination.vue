@@ -71,6 +71,12 @@ export default {
         nextPage () {
             this.selectPage(++this.data.current_page);
         },
+        firstPage(){
+            this.selectPage(1);
+        },
+        lastPage(){
+              this.selectPage(data.last_page);
+        },
         selectPage (page) {
             if (page === '...') {
                 return;
@@ -95,6 +101,18 @@ export default {
                 click: (e) => {
                     e.preventDefault();
                     this.nextPage();
+                }
+            },
+            firstButtonEvents: {
+                click: (e) => {
+                    e.preventDefault();
+                    this.firstPage();
+                }
+            },
+            lastButtonEvents: {
+                click: (e) => {
+                    e.preventDefault();
+                    this.lastPage();
                 }
             },
             pageButtonEvents: page => ({

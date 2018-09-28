@@ -1001,6 +1001,12 @@ var es6_number_constructor = __webpack_require__("c5f6");
     nextPage: function nextPage() {
       this.selectPage(++this.data.current_page);
     },
+    firstPage: function firstPage() {
+      this.selectPage(1);
+    },
+    lastPage: function lastPage() {
+      this.selectPage(data.last_page);
+    },
     selectPage: function selectPage(page) {
       if (page === '...') {
         return;
@@ -1028,6 +1034,20 @@ var es6_number_constructor = __webpack_require__("c5f6");
           e.preventDefault();
 
           _this.nextPage();
+        }
+      },
+      firstButtonEvents: {
+        click: function click(e) {
+          e.preventDefault();
+
+          _this.firstPage();
+        }
+      },
+      lastButtonEvents: {
+        click: function click(e) {
+          e.preventDefault();
+
+          _this.lastPage();
         }
       },
       pageButtonEvents: function pageButtonEvents(page) {
