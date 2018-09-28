@@ -75,7 +75,7 @@ export default {
             this.selectPage(1);
         },
         lastPage(){
-              this.selectPage(data.last_page);
+              this.selectPage(this.data.last_page);
         },
         selectPage (page) {
             if (page === '...') {
