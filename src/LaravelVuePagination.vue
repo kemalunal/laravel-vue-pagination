@@ -1,5 +1,5 @@
 <template>
-    <renderless-laravel-vue-pagination :data="data" :limit="limit" v-on:pagination-change-page="onPaginationChangePage">
+    <renderless-laravel-vue-pagination :data="data" :limit="limit" :firstAndLast="firstAndLast"  v-on:pagination-change-page="onPaginationChangePage">
         <ul class="pagination" v-if="data.total > data.per_page" slot-scope="{ data, limit, firstAndLast, pageRange, prevButtonEvents, nextButtonEvents, pageButtonEvents, firstButtonEvents, lastButtonEvents }">
             <li class="page-item pagination-prev-nav" v-if="data.prev_page_url && firstAndLast">
                 <a class="page-link" href="#" aria-label="First" v-on="firstButtonEvents">
@@ -68,7 +68,7 @@ export default {
         firstAndLast : {
 		    type : Boolean,
             default : false
-            }
+        }
     },
 
     methods: {

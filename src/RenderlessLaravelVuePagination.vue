@@ -20,6 +20,11 @@ export default {
         limit: {
             type: Number,
             default: 0
+        },
+        
+        firstAndLast: {
+            type: Boolean,
+            default: false
         }
     },
 
