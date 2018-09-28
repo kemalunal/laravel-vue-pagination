@@ -1,10 +1,10 @@
 <template>
     <renderless-laravel-vue-pagination :data="data" :limit="limit" v-on:pagination-change-page="onPaginationChangePage">
-        <ul class="pagination" v-if="data.total > data.per_page" slot-scope="{ data, limit, pageRange, prevButtonEvents, nextButtonEvents, pageButtonEvents }">
+        <ul class="pagination" v-if="data.total > data.per_page" slot-scope="{ data, limit, firstAndLast, pageRange, prevButtonEvents, nextButtonEvents, pageButtonEvents, firstButtonEvents, lastButtonEvents }">
             <li class="page-item pagination-prev-nav" v-if="data.prev_page_url && firstAndLast">
-                <a class="page-link" href="#" aria-label="Previous" @click.prevent="selectPage(1)">
+                <a class="page-link" href="#" aria-label="First" v-on="firstButtonEvents">
                     <slot name="first-nav">
-                        <span aria-hidden="true">&laquo;</span>
+                        <span aria-hidden="true">&larr;</span>
                         <span class="sr-only">First</span>
                     </slot>
                 </a>
@@ -29,9 +29,9 @@
                 </a>
             </li>
             <li class="page-item pagination-next-nav" v-if="data.next_page_url && firstAndLast">
-                <a class="page-link" href="#" aria-label="Next" @click.prevent="selectPage(data.last_page)">
+                <a class="page-link" href="#" aria-label="Last" v-on="lastButtonEvents">
                     <slot name="last-nav">
-                        <span aria-hidden="true">&raquo;</span>
+                        <span aria-hidden="true">&rarr;</span>
                         <span class="sr-only">Last</span>
                     </slot>
                 </a>
