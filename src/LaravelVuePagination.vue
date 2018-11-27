@@ -1,6 +1,6 @@
 <template>
-    <renderless-laravel-vue-pagination :data="data" :limit="limit" v-on:pagination-change-page="onPaginationChangePage">
-        <ul class="pagination" v-if="data.total > data.per_page" slot-scope="{ data, limit, pageRange, prevButtonEvents, nextButtonEvents, pageButtonEvents, firstButtonEvents, lastButtonEvents }">
+    <renderless-laravel-vue-pagination :data="data" :limit="limit" :pageNumberLimit="pageNumberLimit" v-on:pagination-change-page="onPaginationChangePage">
+        <ul class="pagination" v-if="data.total > data.per_page" slot-scope="{ data, limit, pageRange, prevButtonEvents, nextButtonEvents, pageButtonEvents, firstButtonEvents, lastButtonEvents, getlastPage }">
             <li class="page-item pagination-prev-nav" v-if="data.prev_page_url && firstAndLast">
                 <a class="page-link" href="#" aria-label="First" v-on="firstButtonEvents">
                     <slot name="first-nav">
@@ -20,7 +20,7 @@
             <li class="page-item pagination-page-nav" v-for="(page, key) in pageRange" :key="key" :class="{ 'active': page == data.current_page }">
                 <a class="page-link" href="#" v-on="pageButtonEvents(page)">{{ page }}</a>
             </li>
-            <li class="page-item pagination-next-nav" v-if="data.next_page_url">
+            <li class="page-item pagination-next-nav" v-if="data.next_page_url && data.current_page != getlastPage()">
                 <a class="page-link" href="#" aria-label="Next" v-on="nextButtonEvents">
                     <slot name="next-nav">
                         <span aria-hidden="true">&raquo;</span>
@@ -28,7 +28,7 @@
                     </slot>
                 </a>
             </li>
-            <li class="page-item pagination-next-nav" v-if="data.next_page_url && firstAndLast">
+            <li class="page-item pagination-next-nav" v-if="data.next_page_url && firstAndLast && data.current_page != getlastPage()">
                 <a class="page-link" href="#" aria-label="Last" v-on="lastButtonEvents">
                     <slot name="last-nav">
                         <span aria-hidden="true">&rarr;</span>
@@ -68,7 +68,11 @@ export default {
          firstAndLast: {
             type: Boolean,
             default: false
-        }
+        },
+        pageNumberLimit: {
+            type: Number,
+            default: 0
+        },
     },
 
     methods: {
