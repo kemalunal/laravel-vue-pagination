@@ -913,7 +913,7 @@ __webpack_require__.r(__webpack_exports__);
 
 if (typeof window !== 'undefined') {
   var i
-  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js$/))) {
+  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js(\?.*)?$/))) {
     __webpack_require__.p = i[1] // eslint-disable-line
   }
 }
@@ -921,8 +921,8 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"2867f158-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LaravelVuePagination.vue?vue&type=template&id=115894b2&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('renderless-laravel-vue-pagination',{attrs:{"data":_vm.data,"limit":_vm.limit},on:{"pagination-change-page":_vm.onPaginationChangePage},scopedSlots:_vm._u([{key:"default",fn:function(ref){
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"0f87e5ee-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/LaravelVuePagination.vue?vue&type=template&id=66d6c5da&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('renderless-laravel-vue-pagination',{attrs:{"data":_vm.data,"limit":_vm.limit,"pageNumberLimit":_vm.pageNumberLimit},on:{"pagination-change-page":_vm.onPaginationChangePage},scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var data = ref.data;
 var limit = ref.limit;
 var pageRange = ref.pageRange;
@@ -931,11 +931,12 @@ var nextButtonEvents = ref.nextButtonEvents;
 var pageButtonEvents = ref.pageButtonEvents;
 var firstButtonEvents = ref.firstButtonEvents;
 var lastButtonEvents = ref.lastButtonEvents;
-return (data.total > data.per_page)?_c('ul',{staticClass:"pagination"},[(data.prev_page_url && _vm.firstAndLast)?_c('li',{staticClass:"page-item pagination-prev-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"First"}},firstButtonEvents),[_vm._t("first-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("←")]),_c('span',{staticClass:"sr-only"},[_vm._v("First")])])],2)]):_vm._e(),(data.prev_page_url)?_c('li',{staticClass:"page-item pagination-prev-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Previous"}},prevButtonEvents),[_vm._t("prev-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("«")]),_c('span',{staticClass:"sr-only"},[_vm._v("Previous")])])],2)]):_vm._e(),_vm._l((pageRange),function(page,key){return _c('li',{key:key,staticClass:"page-item pagination-page-nav",class:{ 'active': page == data.current_page }},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#"}},pageButtonEvents(page)),[_vm._v(_vm._s(page))])])}),(data.next_page_url)?_c('li',{staticClass:"page-item pagination-next-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Next"}},nextButtonEvents),[_vm._t("next-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("»")]),_c('span',{staticClass:"sr-only"},[_vm._v("Next")])])],2)]):_vm._e(),(data.next_page_url && _vm.firstAndLast)?_c('li',{staticClass:"page-item pagination-next-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Last"}},lastButtonEvents),[_vm._t("last-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("→")]),_c('span',{staticClass:"sr-only"},[_vm._v("Last")])])],2)]):_vm._e()],2):_vm._e()}}])})}
+var getlastPage = ref.getlastPage;
+return (data.total > data.per_page)?_c('ul',{staticClass:"pagination"},[(data.prev_page_url && _vm.firstAndLast)?_c('li',{staticClass:"page-item pagination-prev-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"First"}},firstButtonEvents),[_vm._t("first-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("←")]),_c('span',{staticClass:"sr-only"},[_vm._v("First")])])],2)]):_vm._e(),(data.prev_page_url)?_c('li',{staticClass:"page-item pagination-prev-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Previous"}},prevButtonEvents),[_vm._t("prev-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("«")]),_c('span',{staticClass:"sr-only"},[_vm._v("Previous")])])],2)]):_vm._e(),_vm._l((pageRange),function(page,key){return _c('li',{key:key,staticClass:"page-item pagination-page-nav",class:{ 'active': page == data.current_page }},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#"}},pageButtonEvents(page)),[_vm._v(_vm._s(page))])])}),(data.next_page_url && data.current_page != getlastPage())?_c('li',{staticClass:"page-item pagination-next-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Next"}},nextButtonEvents),[_vm._t("next-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("»")]),_c('span',{staticClass:"sr-only"},[_vm._v("Next")])])],2)]):_vm._e(),(data.next_page_url && _vm.firstAndLast && data.current_page != getlastPage())?_c('li',{staticClass:"page-item pagination-next-nav"},[_c('a',_vm._g({staticClass:"page-link",attrs:{"href":"#","aria-label":"Last"}},lastButtonEvents),[_vm._t("last-nav",[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("→")]),_c('span',{staticClass:"sr-only"},[_vm._v("Last")])])],2)]):_vm._e()],2):_vm._e()}}])})}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/LaravelVuePagination.vue?vue&type=template&id=115894b2&
+// CONCATENATED MODULE: ./src/LaravelVuePagination.vue?vue&type=template&id=66d6c5da&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
@@ -963,6 +964,10 @@ var es6_number_constructor = __webpack_require__("c5f6");
     limit: {
       type: Number,
       default: 0
+    },
+    pageNumberLimit: {
+      type: Number,
+      default: 0
     }
   },
   computed: {
@@ -976,7 +981,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
       }
 
       var current = this.data.current_page;
-      var last = this.data.last_page;
+      var last = this.getlastPage();
       var delta = this.limit;
       var left = current - delta;
       var right = current + delta + 1;
@@ -995,7 +1000,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
           if (i - l === 2) {
             pages.push(l + 1);
           } else if (i - l !== 1) {
-            pages.push('...');
+            pages.push("...");
           }
         }
 
@@ -1016,14 +1021,23 @@ var es6_number_constructor = __webpack_require__("c5f6");
       this.selectPage(1);
     },
     lastPage: function lastPage() {
-      this.selectPage(this.data.last_page);
+      this.selectPage(this.getlastPage());
     },
     selectPage: function selectPage(page) {
-      if (page === '...') {
+      if (page === "...") {
         return;
       }
 
-      this.$emit('pagination-change-page', page);
+      this.$emit("pagination-change-page", page);
+    },
+    getlastPage: function getlastPage() {
+      var last = this.data.last_page;
+
+      if (this.pageNumberLimit > 0 && this.data.last_page > this.pageNumberLimit) {
+        last = this.pageNumberLimit;
+      }
+
+      return last;
     }
   },
   render: function render() {
@@ -1069,7 +1083,8 @@ var es6_number_constructor = __webpack_require__("c5f6");
             _this.selectPage(page);
           }
         };
-      }
+      },
+      getlastPage: this.getlastPage
     });
   }
 });
@@ -1261,6 +1276,10 @@ component.options.__file = "RenderlessLaravelVuePagination.vue"
     firstAndLast: {
       type: Boolean,
       default: false
+    },
+    pageNumberLimit: {
+      type: Number,
+      default: 0
     }
   },
   methods: {
